@@ -1,33 +1,42 @@
 from random import choice
 import cores
 
-print(f'*' * 30)
-print(f'*', end='')
-print(f'Jogo da Forca - Times'.center(28), end='')
-print('*')
-print(f'*' * 30)
-lista = ['ATHLETICO',
-         'ATLETICO',
-         'BAHIA',
-         'BOTAFOGO',
-         'CEARA',
-         'CORINTHIANS',
-         'CRUZEIRO',
-         'CURITIBA',
-         'FLAMENGO',
-         'FLUMINENSE',
-         'FORTALEZA',
-         'GOIAS',
-         'BRAGANTINO',
-         'SANTOS',
-         'SAOPAULO',
-         'SPORT',
-         'VASCO',
-         'AMERICA',
-         'CHAPECOENSE',
-         'VITORIA',
-         'NAUTICO']
-palavra = choice(lista)
+def abre_o_jogo():
+    print(f'*' * 30)
+    print(f'*', end='')
+    print(f'Jogo da Forca - Times'.center(28), end='')
+    print('*')
+    print(f'*' * 30)
+
+def escolhe_a_palavra():
+    lista = ['ATHLETICO',
+             'ATLETICO',
+             'BAHIA',
+             'BOTAFOGO',
+             'CEARA',
+             'CORINTHIANS',
+             'CRUZEIRO',
+             'CURITIBA',
+             'FLAMENGO',
+             'FLUMINENSE',
+             'FORTALEZA',
+             'PALMEIRAS',
+             'GOIAS',
+             'BRAGANTINO',
+             'SANTOS',
+             'SAOPAULO',
+             'SPORT',
+             'VASCO',
+             'AMERICA',
+             'CHAPECOENSE',
+             'VITORIA',
+             'NAUTICO']
+    sorteio = choice(lista)
+    return sorteio
+
+
+palavra = escolhe_a_palavra()
+abre_o_jogo()
 tamanho = len(palavra)
 x = 0
 vida=5
