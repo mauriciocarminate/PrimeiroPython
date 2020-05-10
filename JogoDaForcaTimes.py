@@ -35,6 +35,28 @@ def escolhe_a_palavra():
     return sorteio
 
 
+def vencedor():
+    print(cores.Fazulclaro + '*' * 30 + cores.limpa)
+    print(cores.Fazulclaro + '*' + cores.limpa, end='')
+    print(cores.Lverde + 'Você Ganhou!'.center(28) + cores.limpa, end='')
+    print(cores.Fazulclaro + '*' + cores.limpa)
+    print(cores.Fazulclaro + '*' + cores.limpa, end='')
+    print(palavra.center(28), end='')
+    print(cores.Fazulclaro + '*' + cores.limpa)
+    print(cores.Fazulclaro + '*' * 30 + cores.limpa)
+
+
+def perdeu():
+    print(cores.Fvermelho + '*' * 30 + cores.limpa)
+    print(cores.Fvermelho + '*' + cores.limpa, end='')
+    print(cores.Lvermelho + 'Você Perdeu!'.center(28), end='' + cores.limpa)
+    print(cores.Fvermelho + '*' + cores.limpa)
+    print(cores.Fvermelho + '*' + cores.limpa, end='')
+    print(palavra.center(28), end='')
+    print(cores.Fvermelho + '*' + cores.limpa)
+    print(cores.Fvermelho + '*' * 30 + cores.limpa)
+
+
 palavra = escolhe_a_palavra()
 abre_o_jogo()
 tamanho = len(palavra)
@@ -56,25 +78,9 @@ while True:
         vida-=1
     resultado = ''.join(jogo)
     if resultado == palavra:
-        print(cores.Fazulclaro + '*' * 30 + cores.limpa)
-        print(cores.Fazulclaro + '*' + cores.limpa, end='')
-        print(cores.Lverde +'Você Ganhou!'.center(28) + cores.limpa, end='')
-        print(cores.Fazulclaro + '*' + cores.limpa)
-        print(cores.Fazulclaro + '*' + cores.limpa, end='')
-        print(palavra.center(28), end='')
-        print(cores.Fazulclaro + '*' + cores.limpa)
-        print(cores.Fazulclaro + '*' * 30 + cores.limpa)
+        vencedor()
         break
+
     elif vida == 0:
-        print(cores.Fvermelho + '*' * 30 +cores.limpa)
-        print(cores.Fvermelho + '*'+cores.limpa, end='')
-        print(cores.Lvermelho + 'Você Perdeu!'.center(28), end='' + cores.limpa)
-        print(cores.Fvermelho + '*' + cores.limpa)
-        print(cores.Fvermelho + '*'+cores.limpa, end='')
-        print(palavra.center(28), end='')
-        print(cores.Fvermelho + '*' + cores.limpa)
-        print(cores.Fvermelho + '*' * 30 + cores.limpa)
+        perdeu()
         break
-
-
-
